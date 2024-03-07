@@ -8,7 +8,9 @@ import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Service
@@ -23,36 +25,20 @@ public class UserService {
   }
 
   public void InitRolesAndUsers() {
-    Role adminRole = new Role();
-    adminRole.setRoleDescrip("Admin role");
-    adminRole.setRoleName("Admin");
+    Role adminRole = new Role(1L, "ADMIN");
     roleDao.save(adminRole);
 
-    Role userRole = new Role();
-    userRole.setRoleDescrip("Default role for newly created users");
-    userRole.setRoleName("User");
+    Role userRole = new Role(2L, "USER");
     roleDao.save(userRole);
 
-    User admin = new User();
-    admin.setUserNickName("Admin1");
-    admin.setUserEmail("admin@gmail.com");
-    admin.setUserPassword("admin123");
-    admin.setUserName("Admin");
-    admin.setUserLastname("Admin");
-    Set<Role> adminRoles = new HashSet<>();
+    List<Role> adminRoles = new ArrayList<>();
     adminRoles.add(adminRole);
-    admin.setUserRole(adminRoles);
+    User admin = new User(1L, "Admin", "Admin", "admin@gmail.com", "admin123", adminRoles);
     userDao.save(admin);
 
-    User user = new User();
-    user.setUserNickName("User1");
-    user.setUserEmail("user@gmail.com");
-    user.setUserPassword("user123");
-    user.setUserName("User");
-    user.setUserLastname("User");
-    Set<Role> userRoles = new HashSet<>();
+    List<Role> userRoles = new ArrayList<>();
     userRoles.add(userRole);
-    user.setUserRole(userRoles);
+    User user = new User(2L, "User", "User", "user@gmail.com", "user123", userRoles);
     userDao.save(user);
   }
 }

@@ -1,27 +1,21 @@
 package com.example.jwt_practica.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.UUID;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 public class Role {
   @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "ROLE_ID")
+  private Long roleId;
+  @Column(name = "ROLE_NAME")
   private String roleName;
-  private String roleDescrip;
-
-  public String getRoleName() {
-    return roleName;
-  }
-  public void setRoleName(String roleName) {
-    this.roleName = roleName;
-  }
-  public String getRoleDescrip() {
-    return roleDescrip;
-  }
-  public void setRoleDescrip(String roleDescrip) {
-    this.roleDescrip = roleDescrip;
-  }
 }
