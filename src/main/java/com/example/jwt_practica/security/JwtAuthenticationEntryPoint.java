@@ -1,4 +1,4 @@
-package com.example.jwt_practica.configuration;
+package com.example.jwt_practica.security;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

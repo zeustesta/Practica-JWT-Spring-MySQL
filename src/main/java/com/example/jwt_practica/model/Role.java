@@ -1,11 +1,9 @@
-package com.example.jwt_practica.entity;
+package com.example.jwt_practica.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.util.UUID;
 
 @Data
 @AllArgsConstructor

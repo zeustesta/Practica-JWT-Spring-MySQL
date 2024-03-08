@@ -1,4 +1,4 @@
-package com.example.jwt_practica.entity;
+package com.example.jwt_practica.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -18,8 +18,6 @@ public class User {
   @Column(name = "USER_ID")
   private Long userId;
   private String userName;
-  private String userLastname;
-  private String userEmail;
   private String userPassword;
   @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
   @JoinTable(name = "USER_ROLE", joinColumns =
