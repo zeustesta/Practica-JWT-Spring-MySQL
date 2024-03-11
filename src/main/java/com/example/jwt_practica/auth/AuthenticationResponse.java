@@ -1,4 +1,4 @@
-package com.example.jwt_practica.security;
+package com.example.jwt_practica.auth;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
