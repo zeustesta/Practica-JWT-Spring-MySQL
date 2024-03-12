@@ -1,10 +1,12 @@
-package com.example.jwt_practica.security;
+package com.example.jwt_practica.service;
 
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
+
+import com.example.jwt_practica.security.SecurityConstants;
 
 import java.security.Key;
 import java.util.Date;

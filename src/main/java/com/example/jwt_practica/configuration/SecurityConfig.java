@@ -1,4 +1,4 @@
-package com.example.jwt_practica.security;
+package com.example.jwt_practica.configuration;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
@@ -10,6 +10,8 @@ import org.springframework.security.config.annotation.web.configurers.AbstractHt
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+
+import com.example.jwt_practica.security.JwtAuthenticationFilter;
 
 @Configuration
 @EnableWebSecurity
